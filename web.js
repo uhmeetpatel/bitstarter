@@ -6,7 +6,7 @@ var inbuf = fs.readFileSync(infile);
 var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
-  response.send(inbuf);
+  response.send(inbuf.toString('ascii'));
 });
 
 var port = process.env.PORT || 5000;
